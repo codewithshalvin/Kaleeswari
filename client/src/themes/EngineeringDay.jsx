@@ -639,13 +639,13 @@ const EngineeringDay = ({ theme, media }) => {
                       >
                         {item.fileType === 'video' ? (
                           <video
-                            src={`http://localhost:5000/api/media/stream/${tid}`}
+                            src={`${API_BASE_URL}/api/media/stream/${tid}`}
                             className="w-full h-full object-cover"
                             muted
                           />
                         ) : (
                           <img
-                            src={`http://localhost:5000/api/media/stream/${tid}`}
+                            src={`${API_BASE_URL}/api/media/stream/${tid}`}
                             alt={item.title}
                             className="w-full h-full object-cover"
                           />

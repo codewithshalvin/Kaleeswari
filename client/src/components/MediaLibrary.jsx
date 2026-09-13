@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../services/api';
+import api, { API_BASE_URL } from '../services/api';
 
 const MediaLibrary = ({ themes }) => {
   const [media, setMedia] = useState([]);
@@ -64,9 +64,9 @@ const MediaLibrary = ({ themes }) => {
             <div key={item._id} className="group relative rounded-lg border border-gray-200 bg-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-w-10 aspect-h-7 block w-full overflow-hidden h-40">
                 {item.fileType === 'image' ? (
-                  <img src={`http://localhost:5000/api/media/stream/${item.gridFsFileId}`} alt={item.caption || 'Media'} className="object-cover w-full h-full" />
+                  <img src={`${API_BASE_URL}/api/media/stream/${item.gridFsFileId}`} alt={item.caption || 'Media'} className="object-cover w-full h-full" />
                 ) : (
-                  <video src={`http://localhost:5000/api/media/stream/${item.gridFsFileId}`} className="object-cover w-full h-full" />
+                  <video src={`${API_BASE_URL}/api/media/stream/${item.gridFsFileId}`} className="object-cover w-full h-full" />
                 )}
               </div>
               <div className="p-3">
