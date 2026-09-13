@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
   const clientDistPath = path.join(__dirname, '../client/dist');
   app.use(express.static(clientDistPath));
 
-  app.get('*', (req, res) => {
+  app.get('{*path}', (req, res) => {
     if (req.originalUrl.startsWith('/api')) {
       return res.status(404).json({ message: 'API route not found' });
     }
